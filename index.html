@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>롤 팀 매칭 시스템</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 최상단 중앙에 표시될 초기 세팅 정보 -->
+    <h1 id="teamInfoHeader"></h1>
+    
+    <div id="teamSettingInputContainer">
+        <h3>생성할 팀 수</h3>
+        <input id="teamCount" type="number" max="10">
+        <button id="start">시작하기</button>
+    </div>
+    
+    <div class="container">
+        <div id="userInputContainer">
+            <textarea id="userTextInput" rows="5" placeholder="유저명/티어/선호라인1,선호라인2/제외라인1,제외라인2 형식으로 입력해주세요."></textarea>
+            <div class="button-row">
+                <button id="parseUserButton">유저 추가</button>
+                <button id="showTeamPopupButton" style="display:none;">필수 조합 선택</button>
+            </div>
+            <div id="userListContainer">
+                <h2>등록된 유저 목록</h2>
+                <div id="userGrid" class="grid-container"></div>
+            </div>
+        </div>
+    
+        <div id="teamOutputContainer">
+            <div id="matchingButtonContainer">
+                <button id="matchTeamsButton">매칭 시작</button>
+                <button id="rematchButton">다시 매칭</button>
+            </div>
+            <h2>매칭 결과</h2>
+            <div id="teamTableContainer"></div>
+        </div>
+    </div>
+    
+    <div id="teamPopup" class="popup">
+        <h2>유저 조합 선택</h2>
+        <div id="teamSelectionContainer" style="display: flex; text-align: left; gap: 20px;"></div>
+        <div style="display: flex; justify-content: center; margin-top: 20px; gap: 20px;">
+            <button id="completeSelectionButton">선택 완료</button>
+            <button id="closePopupButton">닫기</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
